@@ -41,6 +41,10 @@ Created By Mihir Sojitra
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--primary-font);
     font-size: 12px;
@@ -48,6 +52,7 @@ body {
     font-weight: var(--font-w-regular);
     color: var(--primary-color);
     background-color: var(--primary-bg);
+    scroll-behavior: smooth;
 }
 
 * {
@@ -142,6 +147,7 @@ header .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0;
 }
 
 header .navbar-menu .navbar-nav {
@@ -168,11 +174,11 @@ header .navbar-light .navbar-brand img {
 }
 
 header .navbar-light .navbar-toggler {
-    color: #1F3D8A;
-    border: 1px solid #1F3D8A;
-    height: 30px;
-    width: 30px;
-    background: transparent;
+    background-color: var(--pink-color);
+    border: 1px solid var(--pink-color);
+    height: 35px;
+    width: 35px;
+    /* background: transparent; */
     -ms-box-orient: horizontal;
     display: -webkit-box;
     display: -moz-box;
@@ -189,9 +195,9 @@ header .navbar-light .navbar-toggler {
 }
 
 header .navbar-light .navbar-toggler-icon {
-    background-image: url(../images/menu_icn.svg);
-    height: 30px;
-    width: 30px;
+    background-image: url(../images/menu_icn.png);
+    height: 20px;
+    width: 20px;
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -199,7 +205,9 @@ header .navbar-light .navbar-toggler-icon {
 }
 
 header .navbar-light .navbar-toggler.open .navbar-toggler-icon {
-    background-image: url(../images/close_icn.svg);
+    background-image: url(../images/close_icn.png);
+    height: 14px;
+    width: 15px;
 }
 
 header .navbar-light .navbar-nav li.nav-item {
@@ -351,7 +359,7 @@ section {
     position: relative;
     width: 100%;
     background-image: url(../images/cube.png);
-    background-position: left center;
+    background-position: left top 7px;
     background-repeat: no-repeat;
     background-size: 14px;
 }
@@ -540,12 +548,13 @@ section {
 }
 
 .comingSoon_cols_Sec {
-    padding-top: 64px;
     /* width: 100%; */
     margin-top: 10px;
     /* float: left; */
     display: flex;
     margin: 0 -30px;
+    margin-top: 64px;
+    position: relative;
 }
 
 .comingSoon_col {
@@ -561,6 +570,7 @@ section {
     float: left;
     width: 100%;
     background-color: #1D1D1F;
+    height: 100%;
 }
 
 .comingSoon_col_wrapper .comingSoon_co_icn {
@@ -752,6 +762,24 @@ section {
     }
     to {
         transform: translateY(-33.33%)
+    }
+}
+
+@-webkit-keyframes bannermove-mobile {
+    0% {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-33.33%)
+    }
+}
+
+@keyframes bannermove-mobile {
+    0% {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-33.33%)
     }
 }
 
@@ -985,10 +1013,325 @@ section {
     margin: 10px 0 0;
 }
 
+.subscribe_form {
+    float: left;
+    width: 100%;
+}
+
+.subscribe_form .subscribe_wrapper {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.subscribe_form .subscribe_wrapper .form-group {
+    margin-bottom: 16px;
+    width: 33.33%;
+}
+
+.subscribe_form .subscribe_wrapper .form-group+.form-group {
+    padding-left: 10px;
+}
+
+.subscribe_form .subscribe_wrapper .form-control {
+    border: none;
+    color: #0F0F11;
+    background-color: #FFFFFF;
+    height: 48px;
+    font-size: 15px;
+    width: 100%;
+    float: left;
+}
+
+.form-control::placeholder {
+    color: #CECED4;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #CECED4;
+}
+
+.subscribe_form .subscribe_wrapper .subscribe_btn {
+    background-image: linear-gradient(214.67deg, #EA2A78 0%, #F65F54 99.07%);
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    background-color: #0F0F11;
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    line-height: 48px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.4s linear;
+}
+
+.subscribe_form .noSpam_text {
+    float: left;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+    color: #CECED4;
+    letter-spacing: 0.01em;
+}
+
+
+/** GOT Question Sec **/
+
+.gotQuestion_section {
+    padding: 120px 0;
+}
+
+.gotQuestion_box {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #1D1D1F;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.gotQuestion_box h5 {
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.gotQuestion_box h3 {
+    letter-spacing: 0.01em;
+    color: #CECED4;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+
+.gotQuestion_box .gradinet_btn {
+    letter-spacing: 0.01em;
+    background-image: linear-gradient(214.67deg, #EA2A78 0%, #F65F54 99.07%);
+    height: 48px;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 44px;
+    font-size: 15px;
+    padding: 0 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.3s linear;
+}
+
+.gotQuestion_box .gradinet_btn:hover {
+    opacity: 0.8;
+}
+
+.gotQuestion_box .gradinet_btn img {
+    width: 18px;
+    margin-right: 3px;
+    margin-top: -4px;
+}
+
 
 /** FOOTER SEC START **/
 
 footer.footer {
     float: left;
     width: 100%;
+}
+
+.footer_row1 {
+    float: left;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.ftr_logo {
+    float: left;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.ftr_col_ttl {
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #75787F;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #CECED4;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.ftr_menu {
+    float: left;
+    width: 100%;
+}
+
+.ftr_menu ul {
+    list-style: none;
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 450px;
+}
+
+.ftr_menu ul li {
+    float: left;
+}
+
+.ftr_menu ul li a {
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.ftr_menu_policies {
+    float: left;
+    width: 100%;
+}
+
+.ftr_menu_policies ul {
+    list-style: none;
+    float: left;
+    width: 100%;
+}
+
+.ftr_menu_policies li {
+    float: left;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 24px;
+    margin-right: 16px;
+}
+
+.ftr_menu_policies li.liLable {
+    color: #75787F;
+}
+
+.ftr_menu_policies ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer_row2 {
+    float: left;
+    width: 100%;
+    padding: 50px 0;
+    border-top: 1px solid #424348;
+    border-bottom: 1px solid #ffffff;
+}
+
+.footer_row2 p {
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer_row2 .social_ul {
+    float: left;
+    width: 100%;
+    list-style: none;
+    text-align: right;
+}
+
+.footer_row2 .social_ul li {
+    display: inline-block;
+}
+
+.footer_row2 .social_ul li {
+    display: inline-block;
+    margin-left: 64px;
+}
+
+.footer_row2 .social_ul li img {
+    width: 24px;
+}
+
+.footer_row3 {
+    float: left;
+    width: 100%;
+}
+
+.slick-slider .slick-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: transparent;
+    width: 20px;
+    overflow: hidden;
+}
+
+.slick-slider .slick-arrow.slick-prev {
+    left: -10px;
+}
+
+.slick-slider .slick-arrow.slick-next {
+    right: -10px;
+}
+
+.slick-slider .slick-arrow:before {
+    margin: 0 5px;
+    display: inline-block;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    content: "";
+}
+
+.slick-slider .slick-arrow.slick-next:before {
+    border-left: 8px solid #fff;
+}
+
+.slick-slider .slick-arrow.slick-prev:before {
+    border-right: 8px solid #fff;
+}
+
+.slick-slider .slick-arrow.slick-disabled {
+    opacity: 0;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 40px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-dots button {
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    background-color: #424348;
+    border-radius: 6px;
+    color: transparent;
+    outline: none;
+    border: none;
+    overflow: hidden;
+}
+
+.slick-dots .slick-active button {
+    background: #Ef3E6B;
 }

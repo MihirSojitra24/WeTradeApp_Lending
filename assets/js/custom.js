@@ -99,6 +99,11 @@ jQuery(document).ready(function() {
 
 
 
+    $(window).resize(function(e) {
+        if (window.innerWidth < 980) {
+
+        } else {}
+    });
 
     jQuery('.counter-count').each(function() {
         jQuery(this).prop('Counter', 0).animate({
